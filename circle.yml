@@ -7,7 +7,7 @@ test:
     - bundle exec rake
 
 deployment:
-  staging:
+  master:
     branch: master
     commands:
       - git push git@heroku.com:news-dhnv.git $CIRCLE_SHA1:master
