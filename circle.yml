@@ -6,13 +6,8 @@ test:
   post:
     - bundle exec rake
 
-database:
-  override:
-    - bundle exec rake db:create db:schema:load db:migrate
-
 deployment:
   staging:
     branch: master
     commands:
       - git push git@heroku.com:news-dhnv.git $CIRCLE_SHA1:master
-      - heroku run rake db:migrate db:seed --app news-dhnv      
